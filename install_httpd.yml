@@ -3,6 +3,6 @@
   become: true
   tasks:
 
-  roles:
-   - selinux
-   - apacheHttpd
+  - name: install httpd package
+    yum:
+      name: apacheHttpd
