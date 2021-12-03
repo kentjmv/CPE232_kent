@@ -1,5 +1,5 @@
 ---
-- hosts: kjmv@centosserver
+- hosts: 192.168.56.116
   become: true
   tasks:
 
