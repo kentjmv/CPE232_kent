@@ -1,7 +1,26 @@
 ---
 - hosts: kjmv@192.168.56.116
   become: true
-  become_method: sudo
+  tasks:
 
-  roles:
-   - apacheHttpd
+  - name: apache latest version install
+    dnf:
+      name: httpd
+      state: latest
+  - name: enable service 
+    service:
+      name: httpd
+      state: started
+  - name: create firewall rule
+    firewalld:
+      service: http
+      zone: public
+      permanent: yes
+      immidiate: yes
+      state: enabled
+  handlers:
+  - name: restart apache service
+    service:
+      name: httpd
+      state: restarted
+
