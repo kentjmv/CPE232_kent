@@ -11,13 +11,6 @@
     service:
       name: httpd
       state: started
-  - name: create firewall rule
-    firewalld:
-      service: httpd
-      zone: public
-      permanent: yes
-      immidiate: yes
-      state: enabled
   handlers:
   - name: restart apache service
     service:
