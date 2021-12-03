@@ -13,7 +13,7 @@
       state: started
   - name: create firewall rule
     firewalld:
-      service: http
+      service: httpd
       zone: public
       permanent: yes
       immidiate: yes
