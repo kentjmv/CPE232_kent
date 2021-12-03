@@ -1,0 +1,8 @@
+---
+- hosts: centosserver
+  become: true
+  tasks:
+
+  roles:
+   - selinux
+   - apacheHttpd
