@@ -21,15 +21,15 @@
   - name: update repository index
     dnf:
       update_cache: yes
-    when: ansible_distribution == "CentOs"
+    when: ansible_distribution == "CentOS"
 
   - name: install apache2 package
     dnf:
       name: httpd
       state: latest
-    when: ansible_distribution == "CentOs"
+    when: ansible_distribution == "CentOS"
 
   - name: add PHP support for apache
     dnf:
       name: php
-    when: ansible_distribution == "CentOs"
+    when: ansible_distribution == "CentOS"
