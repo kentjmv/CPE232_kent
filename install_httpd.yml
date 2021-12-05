@@ -1,19 +1,17 @@
 ---
-- hosts: 192.168.56.116
+- hosts: all
   become: true
   tasks:
 
-  - name: apache latest version install
+  - name: update repository index
     dnf:
-      name: httpd
+      update_cache: yes
+    which: ansible_distribution == ["CentOS","RedHat"]
+  - name: install apache and php packages 
+    service:
+      name: 
+        - httpd
+        - php
       state: latest
-  - name: enable service 
-    service:
-      name: httpd
-      state: started
-  handlers:
-  - name: restart apache service
-    service:
-      name: httpd
-      state: restarted
+   which: ansible_distribution == ["CentOS","RedHat"]
 
