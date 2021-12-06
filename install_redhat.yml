@@ -1,0 +1,14 @@
+--
+- hosts: 192.168.56.118
+  become: true
+  tasks:
+
+  - name: update repository index redhat
+    dnf:
+      update_cache: yes
+  - name: install apache and php package redhat
+    dnf:
+      name:
+        - httpd
+        - php
+      state: latest
