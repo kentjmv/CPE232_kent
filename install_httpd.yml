@@ -6,12 +6,12 @@
   - name: update repository index
     dnf:
       update_cache: yes
-    which: ansible_distribution == ["CentOS","RedHat"]
+    which: ansible_distribution == "CentOS","RedHat"
   - name: install apache and php packages 
     service:
       name: 
         - httpd
         - php
       state: latest
-   which: ansible_distribution == ["CentOS","RedHat"]
+   which: ansible_distribution == "CentOS","RedHat"
 
