@@ -1,4 +1,4 @@
 192.168.56.13 apache_package=apache2 php_package=libapache2-mod-php
 192.168.56.14 apache_package=apache2 php_package=libapache2-mod-php
-192.168.56.117 centoserver 
-192.168.56.118 redhatserver
+192.168.56.117  
+192.168.56.118
